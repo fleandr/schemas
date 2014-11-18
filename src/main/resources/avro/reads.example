@@ -1,0 +1,152 @@
+
+Program {
+	commandLine: "bwa sampe –a 500 –r ‘@RG\tID:example_reads\tPL:illumina\tLB:some_lib\tSM:some_sample’ ref.fa left_reads.sai right_reads.sai left_reads.fastq right_reads.fastq > aln.sam",
+	id: "bwa",
+	name: "bwa",
+	prevProgramId: null,
+	version: "0.7.10"
+}
+
+Dataset {
+	id: "my_dataset",
+	description: null
+}
+
+Experiment {
+	libraryId: "some_lib",
+	platformUnit: "illumina",
+	sequencingCenter: null,
+	instrumentModel: "Illumina MiSeq"
+}
+
+ReadStats {
+	alignedReadCount: 1000000,
+	unalignedReadCount: 125,
+	baseCount: 30000000
+}
+
+ReadGroup {
+	id: "example_reads",
+	datasetId: "my_dataset",
+	name: "example_reads",
+	description: null,
+	sampleId: "some_sample",
+	experiment: {
+		libraryId: "some_lib",
+		platformUnit: "illumina",
+		sequencingCenter: null,
+		instrumentModel: "Illumina MiSeq"
+	}
+	predictedInsertSize: 150,
+	created: 100500,
+	updated: 100500,
+	stats: {
+		alignedReadCount: 1000000,
+		unalignedReadCount: 125,
+		baseCount: 30000000
+	},
+	programs: [{
+		commandLine: "bwa sampe –a 500 –r ‘@RG\tID:example_reads\tPL:illumina\tLB:some_lib\tSM:some_sample’ ref.fa left_reads.sai right_reads.sai left_reads.fastq right_reads.fastq > aln.sam",
+		id: "bwa",
+		name: "bwa",
+		prevProgramId: null,
+		version: "0.7.10"
+	}
+	],
+	referenceSetId: "hg19",
+	info: null
+}
+
+ReadGroupSet {
+	id: "matched_reads",
+	datasetId: "my_dataset",
+	name: "example",
+	stats: {
+		alignedReadCount: 1000000,
+		unalignedReadCount: 125,
+		baseCount: 30000000
+	},
+	readGroups: [{
+		id: "example_reads",
+		datasetId: "my_dataset",
+		name: "example_reads",
+		description: null,
+		sampleId: "some_sample",
+		experiment: {
+			libraryId: "some_lib",
+			platformUnit: "illumina",
+			sequencingCenter: null,
+			instrumentModel: "Illumina MiSeq"
+		}
+		predictedInsertSize: 150,
+		created: 100500,
+		updated: 100500,
+		stats: {
+			alignedReadCount: 1000000,
+			unalignedReadCount: 125,
+			baseCount: 30000000
+		},
+		programs: [{
+			commandLine: "bwa sampe –a 500 –r ‘@RG\tID:example_reads\tPL:illumina\tLB:some_lib\tSM:some_sample’ ref.fa left_reads.sai right_reads.sai left_reads.fastq right_reads.fastq > aln.sam",
+			id: "bwa",
+			name: "bwa",
+			prevProgramId: null,
+			version: "0.7.10"
+		}
+		],
+		referenceSetId: "hg19",
+		info: null
+	}
+	]
+}
+
+LinearAlignment {
+	position: {
+		referenceName: "hg19",
+		position: 9800,
+		reverseStrand: false 
+	},
+	mappingQuality: 30,
+	cigar: [{
+		operation: ALIGNMENT_MATCH,
+		operationLength: 100,
+		referenceSequence: "hg19"
+	}]
+}
+
+ReadAlignment {
+	id: null,
+	readGroupId: "example_reads",
+	fragmentName: "HWUSI-EAS100R:6:73:941:1973#0/1",
+	properPlacement: true,
+	duplicateFragment: false,
+	numberReads: null,
+	fragmentLength: 100,
+	readNumber: null,
+	failedVendorQualityChecks: false,
+	alignment: {
+		position: {
+			referenceName: "hg19",
+			position: 9800,
+			reverseStrand: false 
+		},
+		mappingQuality: 30,
+		cigar: [{
+			operation: ALIGNMENT_MATCH,
+			operationLength: 100,
+			referenceSequence: "hg19"
+		}]
+	},
+	secondaryAlignment: false,
+	supplementaryAlignment: false,  
+	alignedSequence: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+	alignedQuality: [30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30,
+	 				30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 
+	 				30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30],
+	nextMatePosition: {
+		referenceName: "hg19",
+		position: 10000,
+		reverseStrand: false 
+	},
+	info: {}
+}
